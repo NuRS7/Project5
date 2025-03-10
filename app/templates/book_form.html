@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить книгу</title>
+</head>
+<body>
+    <h1>Добавить книгу</h1>
+    <form action="{{ url_for('create_book') }}" method="post">
+        <label>Название:</label>
+        <input type="text" name="title" required>
+        <br>
+
+        <label>Автор:</label>
+        <input type="text" name="author" required>
+        <br>
+
+        <label>Год издания:</label>
+        <input type="number" name="year" required>
+        <br>
+
+        <label>Количество страниц:</label>
+        <input type="number" name="total_pages" required>
+        <br>
+
+        <label>Жанр:</label>
+        <input type="text" name="genre" required>
+        <br>
+
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

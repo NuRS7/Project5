@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+</head>
+<body>
+    <h1>Список книг</h1>
+    <ul>
+        {% for book in books %}
+            <li><a href="{{ url_for('get_book', id=book.id) }}">{{ book.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        {% if has_prev %}
+            <a href="{{ url_for('get_books', page=page-1) }}">Назад</a>
+        {% endif %}
+        Страница {{ page }}
+        {% if has_next %}
+            <a href="{{ url_for('get_books', page=page+1) }}">Вперед</a>
+        {% endif %}
+    </div>
+</body>
+</html>

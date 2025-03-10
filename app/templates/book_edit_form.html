@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать книгу</title>
+</head>
+<body>
+    <h1>Редактировать книгу</h1>
+    <form action="{{ url_for('update_book', id=book.id) }}" method="post">
+        <label>Название:</label>
+        <input type="text" name="title" value="{{ book.title }}" required>
+        <br>
+
+        <label>Автор:</label>
+        <input type="text" name="author" value="{{ book.author }}" required>
+        <br>
+
+        <label>Год издания:</label>
+        <input type="number" name="year" value="{{ book.year }}" required>
+        <br>
+
+        <label>Количество страниц:</label>
+        <input type="number" name="total_pages" value="{{ book.total_pages }}" required>
+        <br>
+
+        <label>Жанр:</label>
+        <input type="text" name="genre" value="{{ book.genre }}" required>
+        <br>
+
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>
